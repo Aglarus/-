@@ -1,0 +1,113 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top left, #0f172a, #1e293b);
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+}
+
+.card {
+  position: relative;
+  padding: 3rem 4rem;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.2rem;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+h1 { font-size: 2.4rem; margin-bottom: 0.4rem; }
+p  { font-size: 1.1rem; line-height: 1.4; margin-bottom: 2rem; }
+
+.socials {
+  display: flex;
+  gap: 26px;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.socials a {
+  font-size: 2rem;
+  transition: transform 0.3s;
+  color: #fff;
+}
+.socials a:hover { transform: scale(1.2); }
+
+.button {
+  display: inline-block;
+  background: #3b82f6;
+  padding: 14px 34px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.3s, transform 0.3s;
+}
+.button:hover   { background: #2563eb; transform: translateY(-4px); }
+.button:active  { transform: translateY(0); }
+
+.float-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.4;
+  mix-blend-mode: screen;
+  animation: float 8s ease-in-out infinite alternate;
+}
+.circle1 {
+  width: 220px;
+  height: 220px;
+  background: #3b82f6;
+  top: -60px;
+  left: -60px;
+}
+.circle2 {
+  width: 320px;
+  height: 320px;
+  background: #8b5cf6;
+  bottom: -80px;
+  right: -80px;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  from { transform: translateY(-20px) rotate(0deg); }
+  to   { transform: translateY(20px)  rotate(10deg); }
+}
+
+.gallery {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.6rem;
+}
+.gallery img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+.gallery img:hover { transform: scale(1.08); }
+
+@media (max-width: 600px) {
+  .card { padding: 2rem; }
+  h1    { font-size: 1.8rem; }
+  .avatar { width: 100px; height: 100px; }
+  .socials a { font-size: 1.6rem; }
+}
